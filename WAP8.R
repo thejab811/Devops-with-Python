@@ -1,0 +1,14 @@
+j=1
+i=1
+while(j<=4)
+{
+k=1  
+while(k<=j)
+{
+  cat(i)
+  i=i+1
+  k=k+1
+}
+cat("\n")
+j=j+1
+}

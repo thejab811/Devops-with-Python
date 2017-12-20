@@ -1,0 +1,12 @@
+i=1
+while(i<=5)
+{
+  j=5
+  while(j>=i)
+  {
+    cat(1)
+    j=j-1
+  }
+  cat("\n")
+  i=i+1
+}

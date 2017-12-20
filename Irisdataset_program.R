@@ -1,0 +1,51 @@
+myfunavg=function(datasets)
+{
+  v1<-vector()
+  v2<-vector()
+  v3<-vector()
+  v4<-vector()
+  ds=na.omit(datasets)
+  len=nrow(ds)
+  i=1
+  while(i<=len)
+  {
+    v1=append(v1,ds[i,1])
+    v2=append(v2,ds[i,2])
+    v3=append(v3,ds[i,3])
+    v4=append(v4,ds[i,4])
+    i=i+1
+  }
+  v5=(v1+v2+v3+v4)/4
+  new_dataset=cbind(ds,v5)
+  lens=nrow(new_dataset)
+  s1<-vector()
+  s2<-vector()
+  s3<-vector()
+  dss=unique(new_dataset[5])
+  j=1
+  while(j<=lens)d
+  {
+    if(new_dataset[j,5]=='setosa')
+    {
+      s1=append(s1,new_dataset[j,6])
+    }else if(new_dataset[j,5]=='versicolor')
+    {
+      s2=append(s2,new_dataset[j,6])
+    }else if(new_dataset[j,5]=='virginica')
+    {
+      s3=append(s3,new_dataset[j,6])
+    }
+    j=j+1
+  }
+  vectorfinal<-vector()
+  avgs1=mean(s1)
+  avgs2=mean(s2)
+  avgs3=mean(s3)
+  vectorfinal=append(vectorfinal,"setosa=")
+  vectorfinal=append(vectorfinal,avgs1)
+  vectorfinal=append(vectorfinal,"versicolor=")
+  vectorfinal=append(vectorfinal,avgs2)
+  vectorfinal=append(vectorfinal,"virginica=")
+  vectorfinal=append(vectorfinal,avgs3)
+   return(vectorfinal)
+}
